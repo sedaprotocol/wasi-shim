@@ -58,7 +58,7 @@ export namespace wasi_process {
   }
 }
 
-function lazyArgv(): string[] {
+export function lazyArgv(): string[] {
   let err = args_sizes_get(tempbuf, tempbuf + sizeof<usize>());
   if (err) throw new Error(errnoToString(err));
   let count = load<usize>(tempbuf);
@@ -79,7 +79,7 @@ function lazyArgv(): string[] {
   return argv;
 }
 
-function lazyEnv(): Map<string,string> {
+export function lazyEnv(): Map<string,string> {
   let err = environ_sizes_get(tempbuf, tempbuf + 4);
   if (err) throw new Error(errnoToString(err));
   let count = load<usize>(tempbuf);
