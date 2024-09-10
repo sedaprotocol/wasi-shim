@@ -28,9 +28,9 @@ export namespace wasi_process {
   // @ts-ignore: decorator
   @lazy export const platform = "wasm";
   // @ts-ignore: decorator
-  @lazy export const argv = lazyArgv();
+  // @lazy export const argv = lazyArgv();
   // @ts-ignore: decorator
-  @lazy export const env = lazyEnv();
+  // @lazy export const env = lazyEnv();
   // @ts-ignore: decorator
   @lazy export var exitCode = 0;
 
